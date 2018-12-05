@@ -191,6 +191,11 @@ public class CRUD extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jList2);
 
         jButton7.setText("Borrar");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton16.setText("Buscar");
 
@@ -807,10 +812,13 @@ public class CRUD extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField17ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        List<client> clients;
-        clients = ClientBiz.getClients();
-        List<Instructor> instructors = instructorBiz.getInstructorByDepartment("Comp. Sci.");
     }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+     ClientBiz clientBiz = new ClientBiz();
+     List<client>a=clientBiz.getClients();
+        System.out.println("todo ak14");
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments

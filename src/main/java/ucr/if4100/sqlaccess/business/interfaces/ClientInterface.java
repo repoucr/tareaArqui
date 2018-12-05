@@ -6,14 +6,12 @@
 package ucr.if4100.sqlaccess.business.interfaces;
 
 import java.util.List;
-import ucr.if4100.sqlaccess.common.bean.Instructor;
+import ucr.if4100.sqlaccess.common.bean.client;
 
 /**
  *
- * @author Equipo
+ * @author fabian
  */
-public interface IInstructorBiz {
-    
-    List<Instructor> getInstructorByDepartment(String deptName);
-    
+public interface ClientInterface {
+    public  List<client> getClients();
 }
