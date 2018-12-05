@@ -13,5 +13,10 @@ import ucr.if4100.sqlaccess.common.bean.client;
  * @author fabian
  */
 public interface ClientInterface {
-    public  List<client> getClients();
+    public List<client> getClients();
+    
+    void insertClient(String id, String firstName, String lastName, String address, String birthDate);
+    void updateClient(String id);
+    void deleteClient(String id);
+    
 }
