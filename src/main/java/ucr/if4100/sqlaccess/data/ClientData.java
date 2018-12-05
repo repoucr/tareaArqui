@@ -13,26 +13,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import ucr.if4100.sqlaccess.common.bean.Instructor;
+import ucr.if4100.sqlaccess.common.bean.client;
 
-/**
- *
- * @author Equipo
- */
-public class InstructorDataAccess {
-
-    public List<Instructor> getInstrutorsByDepartment(String deptName) {
+public class ClientData {
+     public List<client> getClients() {
         Connection conn = null;
         CallableStatement spCall = null;
-        ResultSet instructorResult = null;
-        List<Instructor> instructors = new ArrayList<>();
+        ResultSet clientResult = null;
+        List<client> clients = new ArrayList<>();
 
         try {
 
             conn = DatabaseConnection.getDatabaseConnection();
 
-            spCall = conn.prepareCall("{CALL dbo.prGetInstructorsByDepartment(?)}");
-            spCall.setString("dept_name", deptName);
+            spCall = conn.prepareCall("{CALL dbo.get_clients}");
+//            spCall.setString("dept_name", deptName);
 
             boolean results = spCall.execute();
 
@@ -41,7 +36,7 @@ public class InstructorDataAccess {
             // Protect against lack of SET NOCOUNT=ON
             while (results || rowAffected != -1) {
                 if (results) {
-                    instructorResult = spCall.getResultSet();
+                    clientResult = spCall.getResultSet();
                     break;
                 } else {
                     rowAffected = spCall.getUpdateCount();
@@ -49,27 +44,28 @@ public class InstructorDataAccess {
                 results = spCall.getMoreResults();
             }
 
-            while (instructorResult.next()) {
-                Instructor newInstructor = new Instructor();
+            while (clientResult.next()) {
+                client newClient = new client();
                 
-                newInstructor.setId(instructorResult.getString("ID"));
-                newInstructor.setName(instructorResult.getString("name"));
-                newInstructor.setDepartment(instructorResult.getString("dept_name"));
-                newInstructor.setSalary(instructorResult.getDouble("salary"));
+                newClient.setId(clientResult.getString("ID"));
+                newClient.setFirstName(clientResult.getString("first_name"));
+                newClient.setLastName(clientResult.getString("last_name"));
+                newClient.setAddress(clientResult.getString("address"));
+                newClient.setBirthdate(clientResult.getString("birthday"));
 
-                instructors.add(newInstructor);
+                clients.add(newClient);
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(InstructorDataAccess.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ClientData.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            if (instructorResult != null) {
+            if (clientResult != null) {
                 try {
-                    instructorResult.close();
+                    clientResult.close();
                 } catch (SQLException ex) {
-                    Logger.getLogger(InstructorDataAccess.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ClientData.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
 
@@ -77,12 +73,13 @@ public class InstructorDataAccess {
                 try {
                     conn.close();
                 } catch (SQLException ex) {
-                    Logger.getLogger(InstructorDataAccess.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(ClientData.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
 
-        return instructors;
+        return clients;
     }
 
+    
 }

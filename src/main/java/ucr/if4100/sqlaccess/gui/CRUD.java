@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ucr.if4100.sqlaccess.data.gui;
+package ucr.if4100.sqlaccess.gui;
+
+import java.util.List;
+import ucr.if4100.sqlaccess.business.concrete.ClientBiz;
+import ucr.if4100.sqlaccess.common.bean.client;
 
 /**
  *
@@ -51,6 +55,7 @@ public class CRUD extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
         jButton7 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList<>();
@@ -134,8 +139,15 @@ public class CRUD extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jButton4 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTabbedPane1.setBackground(new java.awt.Color(198, 239, 255));
+
+        jTabbedPane2.setBackground(new java.awt.Color(229, 240, 246));
+
+        jPanel8.setBackground(new java.awt.Color(229, 240, 246));
 
         jLabel11.setText("Número de cuenta");
 
@@ -165,7 +177,7 @@ public class CRUD extends javax.swing.JFrame {
 
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jButton6.setText("Agregar");
+        jButton6.setText("Actualizar");
 
         jLabel15.setText("Número interno");
 
@@ -179,6 +191,8 @@ public class CRUD extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jList2);
 
         jButton7.setText("Borrar");
+
+        jButton16.setText("Buscar");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -197,23 +211,29 @@ public class CRUD extends javax.swing.JFrame {
                     .addComponent(jButton5))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel16)
-                        .addComponent(jTextField14)
-                        .addComponent(jLabel15)
-                        .addComponent(jTextField13)
-                        .addComponent(jLabel14)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton6))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel15)
+                            .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(jButton6)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addGap(26, 26, 26))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,7 +244,9 @@ public class CRUD extends javax.swing.JFrame {
                         .addGap(107, 107, 107)
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton16))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -233,9 +255,9 @@ public class CRUD extends javax.swing.JFrame {
                         .addComponent(jLabel14)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)
+                        .addGap(37, 37, 37)
                         .addComponent(jButton6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE))
                     .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator3))
                 .addGap(27, 27, 27))
@@ -257,7 +279,7 @@ public class CRUD extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addComponent(jButton5))
                     .addGroup(jPanel8Layout.createSequentialGroup()
-                        .addGap(56, 56, 56)
+                        .addGap(51, 51, 51)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton7)))
@@ -266,6 +288,7 @@ public class CRUD extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Cuenta", jPanel8);
 
+        jPanel9.setBackground(new java.awt.Color(229, 240, 246));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jList3.setModel(new javax.swing.AbstractListModel<String>() {
@@ -316,6 +339,7 @@ public class CRUD extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Cuentas", jPanel3);
 
+        jPanel4.setBackground(new java.awt.Color(229, 240, 246));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel19.setText("Retiro");
@@ -388,6 +412,8 @@ public class CRUD extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Depósito/Retiro", jPanel4);
 
+        jPanel5.setBackground(new java.awt.Color(229, 240, 246));
+
         jList5.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -425,7 +451,7 @@ public class CRUD extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                         .addComponent(jButton14)
                         .addGap(38, 38, 38)))
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -449,6 +475,8 @@ public class CRUD extends javax.swing.JFrame {
         );
 
         jTabbedPane1.addTab("Transferencias", jPanel5);
+
+        jPanel6.setBackground(new java.awt.Color(229, 240, 246));
 
         jList7.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -492,7 +520,7 @@ public class CRUD extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel32)
                             .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel33)
                             .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -530,6 +558,9 @@ public class CRUD extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Estado de cuenta", jPanel6);
 
+        jPanel2.setBackground(new java.awt.Color(229, 240, 246));
+
+        jPanel7.setBackground(new java.awt.Color(229, 240, 246));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -617,6 +648,13 @@ public class CRUD extends javax.swing.JFrame {
 
         jButton4.setText("Borrar");
 
+        jButton17.setText("Prueba");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -647,10 +685,13 @@ public class CRUD extends javax.swing.JFrame {
                         .addGap(72, 72, 72)))
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
-                .addContainerGap(26, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton17)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton4)))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -689,7 +730,9 @@ public class CRUD extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(27, 27, 27)
-                        .addComponent(jButton4))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton4)
+                            .addComponent(jButton17)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(jButton2)))
@@ -763,6 +806,12 @@ public class CRUD extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField17ActionPerformed
 
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        List<client> clients;
+        clients = ClientBiz.getClients();
+        List<Instructor> instructors = instructorBiz.getInstructorByDepartment("Comp. Sci.");
+    }//GEN-LAST:event_jButton17ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -806,6 +855,8 @@ public class CRUD extends javax.swing.JFrame {
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
