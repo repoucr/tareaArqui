@@ -100,7 +100,24 @@ public class ClientData {
             Logger.getLogger(AccountData.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(AccountData.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+//            if (clientResult != null) {
+//                try {
+//                    clientResult.close();
+//                } catch (SQLException ex) {
+//                    Logger.getLogger(ClientData.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+//            }
+
+            if (conn != null) {
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(ClientData.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         }
+
     }
     
     public void deleteClient(String id) {
