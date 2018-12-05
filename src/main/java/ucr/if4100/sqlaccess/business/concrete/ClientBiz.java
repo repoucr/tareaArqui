@@ -24,5 +24,24 @@ public class ClientBiz implements ClientInterface{
     public  List<client> getClients() {
         return _dataAccess.getClients();
     }
+
+    @Override
+    public void insertClient(String id, String firstName, String lastName, String address, String birthDate) {
+         client newClient = new client(id, firstName, lastName, address, birthDate);
+        _dataAccess.insertClient(id, firstName, lastName, address, birthDate);
+    }
+
+    @Override
+    public void deleteClient(String id) {
+       _dataAccess.deleteClient(id);
+    }
+
+    @Override
+    public void updateClient(String id) {
+//        client newClient = new client(id, firstName, lastName, address, birthDate);
+//        _dataAccess.insertClient(id, firstName, lastName, address, birthDate);
+    }
+
+   
     
 }
