@@ -52,7 +52,7 @@ public class HasData {
                 has newHas = new has();
 
                 newHas.setIdClient(hasResult.getString("id_client"));
-                //newHas.setNameClient(hasResult.getString(""));
+                newHas.setNameClient(hasResult.getString("name_client"));
                 newHas.setIdAccount(hasResult.getString("id_account"));
                 newHas.setNumberAccount(hasResult.getString("number_account"));
 
@@ -90,8 +90,9 @@ public class HasData {
 
         try {
             conn = DatabaseConnection.getDatabaseConnection();
-            spCall = conn.prepareCall("{CALL dbo.insert_has_(?,?,?)}");
+            spCall = conn.prepareCall("{CALL dbo.insert_has_(?,?,?,?)}");
             spCall.setString("id_client", idClient);
+            spCall.setString("name_client", nameClient);
             spCall.setString("id_account", idAccount);
             spCall.setString("number_account", numberAccount);
             

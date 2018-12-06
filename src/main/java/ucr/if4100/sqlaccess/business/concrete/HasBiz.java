@@ -19,7 +19,7 @@ public class HasBiz {
     public HasBiz(){
         this._dataAccess = new HasData();
     }
-    public  List<has> getClients() {
+    public  List<has> getHas() {
         return _dataAccess.getHas();
     }
     
