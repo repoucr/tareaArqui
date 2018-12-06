@@ -55,7 +55,10 @@ public class MovementData {
                 newMovement.setAmount(Integer.parseInt(movementResult.getString("amount")));
                 newMovement.setDate(movementResult.getString("date"));
                 newMovement.setDetail(movementResult.getString("detail"));
-
+                newMovement.setIdAccount(movementResult.getString("id_account"));
+                newMovement.setIdClient(movementResult.getString("id_client"));
+                newMovement.setClientName(movementResult.getString("client_name"));
+                
                 movements.add(newMovement);
             }
 
@@ -84,17 +87,21 @@ public class MovementData {
         return movements;
     }
 
-    public void insertMovement(String id, int amount, String date, String detail) {
+    public void insertMovement(String id, int amount, String date, String detail, String idAccount, String idClient, String clientName) {
         Connection conn = null;
         CallableStatement spCall = null;
 
         try {
             conn = DatabaseConnection.getDatabaseConnection();
-            spCall = conn.prepareCall("{CALL dbo.insert_movement(?,?,?,?)}");
+            spCall = conn.prepareCall("{CALL dbo.insert_movement(?,?,?,?,?,?,?)}");
             spCall.setString("id", id);
             spCall.setInt("amount",  amount);
             spCall.setString("date", date);
             spCall.setString("detail", detail);
+            spCall.setString("id_account",idAccount);
+            spCall.setString("id_client",idClient);
+            spCall.setString("client_name",clientName);
+            
             boolean results = spCall.execute();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
