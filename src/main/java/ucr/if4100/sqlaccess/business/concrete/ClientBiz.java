@@ -37,9 +37,8 @@ public class ClientBiz implements ClientInterface{
     }
 
     @Override
-    public void updateClient(String id) {
-//        client newClient = new client(id, firstName, lastName, address, birthDate);
-//        _dataAccess.insertClient(id, firstName, lastName, address, birthDate);
+    public void updateClient(String id, String firstName, String lastName, String address, String birthDate) {
+        _dataAccess.insertClient(id, firstName, lastName, address, birthDate);
     }
 
    

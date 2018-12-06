@@ -16,7 +16,7 @@ public interface ClientInterface {
     public List<client> getClients();
     
     void insertClient(String id, String firstName, String lastName, String address, String birthDate);
-    void updateClient(String id);
+    void updateClient(String id, String firstName, String lastName, String address, String birthDate);
     void deleteClient(String id);
     
 }
