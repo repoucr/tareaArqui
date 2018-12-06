@@ -102,7 +102,7 @@ public class AccountMovementData {
         }
     }
 
-    public void deleteHasByIdMovement(String id) {
+    public void deleteAccountMovementByIdMovement(String id) {
         Connection conn = null;
         CallableStatement spCall = null;
 
@@ -119,7 +119,7 @@ public class AccountMovementData {
         }
     }
 
-    public void deleteHasByIdAccount(String id) {
+    public void deleteAccountMovementByIdAccount(String id) {
         Connection conn = null;
         CallableStatement spCall = null;
 
@@ -136,7 +136,7 @@ public class AccountMovementData {
         }
     }
     
-    public void deleteHasByNumberAccount(String number) {
+    public void deleteAccountMovementByNumberAccount(String number) {
         Connection conn = null;
         CallableStatement spCall = null;
 

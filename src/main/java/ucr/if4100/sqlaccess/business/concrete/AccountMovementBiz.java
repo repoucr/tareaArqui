@@ -28,14 +28,14 @@ public class AccountMovementBiz {
                
     }
     
-    public void deleteHasByIdMovement(String id){
-        _dataAccess.deleteHasByIdMovement(id);
+    public void deleteAccountMovementByIdMovement(String id){
+        _dataAccess.deleteAccountMovementByIdMovement(id);
     }
-    public void deleteHasByIdAccount(String id){
-        _dataAccess.deleteHasByIdAccount(id);
+    public void deleteAccountMovementByIdAccount(String id){
+        _dataAccess.deleteAccountMovementByIdAccount(id);
     }
     
-    public void deleteHasByNumberAccount(String number){
-         _dataAccess.deleteHasByNumberAccount(number);
+    public void deleteAccountMovementByNumberAccount(String number){
+         _dataAccess.deleteAccountMovementByNumberAccount(number);
     }
 }
