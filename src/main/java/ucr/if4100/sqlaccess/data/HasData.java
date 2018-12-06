@@ -30,7 +30,7 @@ public class HasData {
 
             conn = DatabaseConnection.getDatabaseConnection();
 
-            spCall = conn.prepareCall("{CALL dbo.get_account}");
+            spCall = conn.prepareCall("{CALL dbo.get_has_}");
 //            spCall.setString("dept_name", deptName);
 
             boolean results = spCall.execute();

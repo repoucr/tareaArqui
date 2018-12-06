@@ -652,10 +652,12 @@ public class CRUD extends javax.swing.JFrame {
     private void insertAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertAccountButtonActionPerformed
         accountBiz.insertAccount(insertAccount.getText().toString(), insertInterno.getText().toString(), 0, monedaComboBox.getSelectedItem().toString());
         hasBiz.insertHas(accountClientsTable.getValueAt(accountClientsTable.getSelectedRow(),0).toString()
-                ,accountClientsTable.getValueAt(accountClientsTable.getSelectedRow(),1).toString()
+                ,accountClientsTable.getValueAt(accountClientsTable.getSelectedRow(),1).toString()+
+                 accountClientsTable.getValueAt(accountClientsTable.getSelectedRow(),2).toString()
                 , insertAccount.getText().toString()
                 , insertInterno.getText().toString());
         fillAccountTable();
+        
     }//GEN-LAST:event_insertAccountButtonActionPerformed
 
     private void accountClientsTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountClientsTableMouseClicked
@@ -663,7 +665,9 @@ public class CRUD extends javax.swing.JFrame {
     }//GEN-LAST:event_accountClientsTableMouseClicked
 
     private void accountTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountTableMouseClicked
-     List<has> hasList = hasBiz.getHas();
+     
+        List<has> hasList = hasBiz.getHas();
+        
         for (int i = 0; i < hasList.size(); i++) {
             if (hasList.get(i).getIdAccount().equals(accountTable.getValueAt(accountTable.getSelectedRow(), 0).toString())) {
                 labelAccountClient.setText(hasList.get(i).getNameClient());
