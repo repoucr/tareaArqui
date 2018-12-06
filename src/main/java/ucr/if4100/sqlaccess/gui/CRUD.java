@@ -9,9 +9,11 @@ import java.util.List;
 import ucr.if4100.sqlaccess.business.concrete.AccountBiz;
 import ucr.if4100.sqlaccess.business.concrete.ClientBiz;
 import ucr.if4100.sqlaccess.business.concrete.HasBiz;
+import ucr.if4100.sqlaccess.business.concrete.MovementBiz;
 import ucr.if4100.sqlaccess.common.bean.account;
 import ucr.if4100.sqlaccess.common.bean.client;
 import ucr.if4100.sqlaccess.common.bean.has;
+import ucr.if4100.sqlaccess.common.bean.movement;
 import ucr.if4100.sqlaccess.data.AccountData;
 import ucr.if4100.sqlaccess.data.ClientData;
 import ucr.if4100.sqlaccess.data.HasData;
@@ -29,10 +31,12 @@ public class CRUD extends javax.swing.JFrame {
         initComponents();
         fillClientsTable();
         fillAccountTable();
+        fillMovementsTable();
     }
     ClientBiz clientBiz = new ClientBiz();
     AccountBiz accountBiz = new AccountBiz();
     HasBiz hasBiz = new HasBiz();
+    MovementBiz movementBiz = new MovementBiz();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,7 +53,7 @@ public class CRUD extends javax.swing.JFrame {
                 arrayTableClient[i][2] = client.get(i).getLastName();
                 arrayTableClient[i][3] = client.get(i).getAddress();
                 arrayTableClient[i][4] = client.get(i).getBirthdate();
-                
+
                 clientTable.setModel(new javax.swing.table.DefaultTableModel(arrayTableClient, new String[]{"ID", "First Name", "Last Name", "Address", "Birthday"}));
                 accountClientsTable.setModel(new javax.swing.table.DefaultTableModel(arrayTableClient, new String[]{"ID", "First Name", "Last Name", "Address", "Birthday"}));
             }
@@ -59,7 +63,7 @@ public class CRUD extends javax.swing.JFrame {
             accountClientsTable.setModel(new javax.swing.table.DefaultTableModel(arrayTableClient, new String[]{"ID", "First Name", "Last Name", "Address", "Birthday"}));
         }
     }
-    
+
     private void fillAccountTable() {
         List<account> account = accountBiz.getClients();
         if (account.size() > 0) {
@@ -69,16 +73,41 @@ public class CRUD extends javax.swing.JFrame {
                 arrayTableAccount[i][1] = account.get(i).getNumber();
                 arrayTableAccount[i][2] = String.valueOf(account.get(i).getAccountBalance());
                 arrayTableAccount[i][3] = account.get(i).getCurrency();
-                
+
                 accountTable.setModel(new javax.swing.table.DefaultTableModel(arrayTableAccount, new String[]{"No. Cuenta", "No. Interno", "Saldo", "Moneda"}));
-                
+                accountsMovementTable.setModel(new javax.swing.table.DefaultTableModel(arrayTableAccount, new String[]{"No. Cuenta", "No. Interno", "Saldo", "Moneda"}));
+
             }
         } else {
             String[][] arrayTableAccount = new String[account.size()][4];
             accountTable.setModel(new javax.swing.table.DefaultTableModel(arrayTableAccount, new String[]{"No. Cuenta", "No. Interno", "Saldo", "Moneda"}));
+            accountsMovementTable.setModel(new javax.swing.table.DefaultTableModel(arrayTableAccount, new String[]{"No. Cuenta", "No. Interno", "Saldo", "Moneda"}));
+
         }
     }
-    
+
+    private void fillMovementsTable() {
+        List<movement> movement = movementBiz.getMovements();
+        if (movement.size() > 0) {
+            String[][] arrayTableMovement = new String[movement.size()][7];
+            for (int i = 0; i < movement.size(); i++) {
+                arrayTableMovement[i][0] = movement.get(i).getId();
+                arrayTableMovement[i][1] = String.valueOf(movement.get(i).getAmount());
+                arrayTableMovement[i][2] = movement.get(i).getDate();
+                arrayTableMovement[i][3] = movement.get(i).getDetail();
+                arrayTableMovement[i][4] = movement.get(i).getIdAccount();
+                arrayTableMovement[i][5] = movement.get(i).getIdClient();
+                arrayTableMovement[i][6] = movement.get(i).getClientName();
+
+                movementTable.setModel(new javax.swing.table.DefaultTableModel(arrayTableMovement, new String[]{"ID", "Monto", "Fecha", "Detalle", "Cuenta Cliente", "Cliente"}));
+
+            }
+        } else {
+            String[][] arrayTableMovement = new String[movement.size()][5];
+            movementTable.setModel(new javax.swing.table.DefaultTableModel(arrayTableMovement, new String[]{"ID", "Monto", "Fecha", "Detalle", "Cuenta Cliente", "Cliente"}));
+        }
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -87,6 +116,12 @@ public class CRUD extends javax.swing.JFrame {
         jTable5 = new javax.swing.JTable();
         jScrollPane14 = new javax.swing.JScrollPane();
         jTable6 = new javax.swing.JTable();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+        jSeparator8 = new javax.swing.JSeparator();
+        jSeparator9 = new javax.swing.JSeparator();
+        jSeparator10 = new javax.swing.JSeparator();
+        jSeparator11 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
@@ -107,20 +142,6 @@ public class CRUD extends javax.swing.JFrame {
         accountClientsTable = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
         labelAccountClient = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jSeparator6 = new javax.swing.JSeparator();
-        jTextField17 = new javax.swing.JTextField();
-        jButton12 = new javax.swing.JButton();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
-        accionButton = new javax.swing.JButton();
-        jScrollPane18 = new javax.swing.JScrollPane();
-        jTable10 = new javax.swing.JTable();
-        jLabel38 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         jTextField19 = new javax.swing.JTextField();
@@ -160,6 +181,30 @@ public class CRUD extends javax.swing.JFrame {
         insertFechaTextField = new javax.swing.JTextField();
         insertClientButton = new javax.swing.JButton();
         updateClientButton = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        drIDLabel = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jTextField18 = new javax.swing.JTextField();
+        accionButton = new javax.swing.JButton();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        movementTable = new javax.swing.JTable();
+        drMontoLabel = new javax.swing.JLabel();
+        jScrollPane19 = new javax.swing.JScrollPane();
+        accountsMovementTable = new javax.swing.JTable();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        ID = new javax.swing.JLabel();
+        drFechaLabel = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        drDetalleLabel = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        drCuentaLabel = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        drClienteLabel = new javax.swing.JLabel();
 
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -298,70 +343,10 @@ public class CRUD extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, 414, Short.MAX_VALUE)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Cuentas", jPanel3);
-
-        jPanel4.setBackground(new java.awt.Color(229, 240, 246));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel4.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, -1, 90));
-
-        jTextField17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField17ActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jTextField17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 142, -1));
-
-        jButton12.setText("Buscar");
-        jPanel4.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, -1, -1));
-
-        jLabel26.setText("Cliente");
-        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 60, -1));
-        jPanel4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 150, 20));
-
-        jLabel28.setText("Fondos");
-        jPanel4.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
-
-        jLabel29.setText("jLabel24");
-        jPanel4.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 150, 20));
-
-        jLabel30.setText("Monto");
-        jPanel4.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, 10));
-        jPanel4.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 140, -1));
-
-        accionButton.setText("Depósito");
-        jPanel4.add(accionButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, -1));
-
-        jTable10.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane18.setViewportView(jTable10);
-
-        jPanel4.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 80, 330, 240));
-
-        jLabel38.setText("jLabel24");
-        jPanel4.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 150, 20));
-
-        jTabbedPane1.addTab("Depósito/Retiro", jPanel4);
 
         jPanel5.setBackground(new java.awt.Color(229, 240, 246));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -563,6 +548,98 @@ public class CRUD extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Usuarios", jPanel2);
 
+        jPanel4.setBackground(new java.awt.Color(229, 240, 246));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel4.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, -1, 90));
+
+        jLabel26.setText("ID");
+        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 60, 20));
+        jPanel4.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 150, 20));
+
+        jLabel28.setText("Fondos");
+        jPanel4.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+        jPanel4.add(drIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 200, 20));
+
+        jLabel30.setText("Monto");
+        jPanel4.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, 10));
+        jPanel4.add(jTextField18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 140, -1));
+
+        accionButton.setText("Depósito");
+        jPanel4.add(accionButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, -1, -1));
+
+        movementTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        movementTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                movementTableMouseClicked(evt);
+            }
+        });
+        jScrollPane18.setViewportView(movementTable);
+
+        jPanel4.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 380, 180));
+        jPanel4.add(drMontoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 170, 20));
+
+        accountsMovementTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        accountsMovementTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                accountsMovementTableMouseClicked(evt);
+            }
+        });
+        jScrollPane19.setViewportView(accountsMovementTable);
+
+        jPanel4.add(jScrollPane19, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 380, 180));
+        jPanel4.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, -1, -1));
+
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel4.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 60, 420));
+
+        ID.setText("Fecha");
+        jPanel4.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        jPanel4.add(drFechaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 160, 20));
+
+        jLabel8.setText("Detalle");
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
+        jPanel4.add(drDetalleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 160, 20));
+
+        jLabel10.setText("Cuenta");
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+        jPanel4.add(drCuentaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 150, 20));
+
+        jLabel7.setText("Cliente");
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
+        jPanel4.add(drClienteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 160, 20));
+
+        jTabbedPane1.addTab("Depósito/Retiro", jPanel4);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -610,10 +687,6 @@ public class CRUD extends javax.swing.JFrame {
         fillClientsTable();
     }//GEN-LAST:event_updateClientButtonActionPerformed
 
-    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField17ActionPerformed
-
     private void borrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarButtonActionPerformed
         hasBiz.deleteHasByIdClient(insertCedulaTextField.getText().toString());
         clientBiz.deleteClient(insertCedulaTextField.getText().toString());
@@ -631,12 +704,12 @@ public class CRUD extends javax.swing.JFrame {
     private void insertAccountButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertAccountButtonActionPerformed
         accountBiz.insertAccount(insertAccount.getText().toString(), insertInterno.getText().toString(), 0, monedaComboBox.getSelectedItem().toString());
         hasBiz.insertHas(accountClientsTable.getValueAt(accountClientsTable.getSelectedRow(), 0).toString(),
-                 accountClientsTable.getValueAt(accountClientsTable.getSelectedRow(), 1).toString() + " "
+                accountClientsTable.getValueAt(accountClientsTable.getSelectedRow(), 1).toString() + " "
                 + accountClientsTable.getValueAt(accountClientsTable.getSelectedRow(), 2).toString(),
-                 insertAccount.getText().toString(),
-                 insertInterno.getText().toString());
+                insertAccount.getText().toString(),
+                insertInterno.getText().toString());
         fillAccountTable();
-        
+
     }//GEN-LAST:event_insertAccountButtonActionPerformed
 
     private void accountClientsTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountClientsTableMouseClicked
@@ -646,7 +719,7 @@ public class CRUD extends javax.swing.JFrame {
     private void accountTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountTableMouseClicked
         labelAccountClient.setText(" ");
         List<has> hasList = hasBiz.getHas();
-        
+
         for (int i = 0; i < hasList.size(); i++) {
             if (hasList.get(i).getIdAccount().equals(accountTable.getValueAt(accountTable.getSelectedRow(), 0).toString())) {
                 labelAccountClient.setText(hasList.get(i).getNameClient());
@@ -657,9 +730,22 @@ public class CRUD extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         hasBiz.deleteHasByIdAccount(accountTable.getValueAt(accountTable.getSelectedRow(), 0).toString());
         accountBiz.deleteAccountById(accountTable.getValueAt(accountTable.getSelectedRow(), 0).toString());
-        
+
         fillAccountTable();
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void accountsMovementTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountsMovementTableMouseClicked
+       
+    }//GEN-LAST:event_accountsMovementTableMouseClicked
+
+    private void movementTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_movementTableMouseClicked
+      drIDLabel.setText(movementTable.getValueAt(movementTable.getSelectedRow(), 0).toString());
+      drMontoLabel.setText(movementTable.getValueAt(movementTable.getSelectedRow(), 1).toString());
+      drFechaLabel.setText(movementTable.getValueAt(movementTable.getSelectedRow(), 2).toString());
+      drDetalleLabel.setText(movementTable.getValueAt(movementTable.getSelectedRow(), 3).toString());
+      drCuentaLabel.setText(movementTable.getValueAt(movementTable.getSelectedRow(), 4).toString());
+      drClienteLabel.setText(movementTable.getValueAt(movementTable.getSelectedRow(), 5).toString());
+    }//GEN-LAST:event_movementTableMouseClicked
 
     /**
      * @param args the command line arguments
@@ -697,11 +783,19 @@ public class CRUD extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ID;
     private javax.swing.JButton accionButton;
     private javax.swing.JTable accountClientsTable;
     private javax.swing.JTable accountTable;
+    private javax.swing.JTable accountsMovementTable;
     private javax.swing.JButton borrarButton;
     private javax.swing.JTable clientTable;
+    private javax.swing.JLabel drClienteLabel;
+    private javax.swing.JLabel drCuentaLabel;
+    private javax.swing.JLabel drDetalleLabel;
+    private javax.swing.JLabel drFechaLabel;
+    private javax.swing.JLabel drIDLabel;
+    private javax.swing.JLabel drMontoLabel;
     private javax.swing.JTextField insertAccount;
     private javax.swing.JButton insertAccountButton;
     private javax.swing.JTextField insertApellidosTextField;
@@ -711,12 +805,12 @@ public class CRUD extends javax.swing.JFrame {
     private javax.swing.JTextField insertFechaTextField;
     private javax.swing.JTextField insertInterno;
     private javax.swing.JTextField insertNombreTextField;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -724,7 +818,6 @@ public class CRUD extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
@@ -734,10 +827,11 @@ public class CRUD extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
@@ -756,23 +850,31 @@ public class CRUD extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane17;
     private javax.swing.JScrollPane jScrollPane18;
+    private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator10;
+    private javax.swing.JSeparator jSeparator11;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable10;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
     private javax.swing.JTable jTable9;
-    private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField19;
     private javax.swing.JLabel labelAccountClient;
     private javax.swing.JComboBox<String> monedaComboBox;
+    private javax.swing.JTable movementTable;
     private javax.swing.JButton updateClientButton;
     // End of variables declaration//GEN-END:variables
 }
