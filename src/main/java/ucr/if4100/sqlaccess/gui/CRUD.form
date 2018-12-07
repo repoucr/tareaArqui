@@ -252,7 +252,7 @@
                         <Component class="javax.swing.JButton" name="insertAccountButton">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/images/simbolo-mas-en-un-cuadrado-negro-redondeado.png"/>
+                              <Image iconType="3" name="/simbolo-mas-en-un-cuadrado-negro-redondeado.png"/>
                             </Property>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                           </Properties>
@@ -268,7 +268,7 @@
                         <Component class="javax.swing.JButton" name="jButton7">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/images/borrar.png"/>
+                              <Image iconType="3" name="/borrar.png"/>
                             </Property>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                           </Properties>
