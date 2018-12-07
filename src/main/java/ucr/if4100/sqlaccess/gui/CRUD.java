@@ -189,6 +189,8 @@ public class CRUD extends javax.swing.JFrame {
         accountClientsTable = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
         labelAccountClient = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -209,6 +211,7 @@ public class CRUD extends javax.swing.JFrame {
         insertClientButton = new javax.swing.JButton();
         updateClientButton = new javax.swing.JButton();
         usuarioMsgLabel = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel26 = new javax.swing.JLabel();
@@ -241,12 +244,16 @@ public class CRUD extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         drCuenta1Label = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         accountsRecordsTable = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         recordsTable = new javax.swing.JTable();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel31 = new javax.swing.JLabel();
         transferMontoTextField = new javax.swing.JTextField();
@@ -265,6 +272,9 @@ public class CRUD extends javax.swing.JFrame {
         idTransfertextField = new javax.swing.JTextField();
         Detalle = new javax.swing.JLabel();
         tranferDetalleTextField = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
 
         jTable5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -317,7 +327,6 @@ public class CRUD extends javax.swing.JFrame {
         jPanel8.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 17, 389));
 
         insertAccountButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simbolo-mas-en-un-cuadrado-negro-redondeado.png"))); // NOI18N
-        insertAccountButton.setText("Agregar");
         insertAccountButton.setContentAreaFilled(false);
         insertAccountButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -326,7 +335,7 @@ public class CRUD extends javax.swing.JFrame {
         });
         jPanel8.add(insertAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, 30));
 
-        jButton7.setText("Eliminar");
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/borrar.png"))); // NOI18N
         jButton7.setContentAreaFilled(false);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -383,6 +392,12 @@ public class CRUD extends javax.swing.JFrame {
         labelAccountClient.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jPanel8.add(labelAccountClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 130, 20));
 
+        jLabel29.setText("Cuentas");
+        jPanel8.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
+
+        jLabel32.setText("Clientes");
+        jPanel8.add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -426,13 +441,14 @@ public class CRUD extends javax.swing.JFrame {
         jButton4.setText("Borrar");
         jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(935, 350, -1, -1));
 
-        borrarButton.setText("Borrar");
+        borrarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/borrar.png"))); // NOI18N
+        borrarButton.setContentAreaFilled(false);
         borrarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 borrarButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(borrarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 340, -1, -1));
+        jPanel2.add(borrarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, -1, -1));
 
         clientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -498,24 +514,27 @@ public class CRUD extends javax.swing.JFrame {
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
         jPanel2.add(insertFechaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 137, -1));
 
-        insertClientButton.setText("Agregar");
+        insertClientButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simbolo-mas-en-un-cuadrado-negro-redondeado.png"))); // NOI18N
         insertClientButton.setContentAreaFilled(false);
         insertClientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 insertClientButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(insertClientButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 80, 20));
+        jPanel2.add(insertClientButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 70, 40));
 
-        updateClientButton.setText("Actualizar");
+        updateClientButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/intercambio.png"))); // NOI18N
         updateClientButton.setContentAreaFilled(false);
         updateClientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 updateClientButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(updateClientButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
+        jPanel2.add(updateClientButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, -1, 40));
         jPanel2.add(usuarioMsgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 200, 20));
+
+        jLabel27.setText("Clientes");
+        jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
 
         jTabbedPane1.addTab("Usuarios", jPanel2);
 
@@ -535,7 +554,8 @@ public class CRUD extends javax.swing.JFrame {
         jPanel4.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, 20));
         jPanel4.add(montoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 90, -1));
 
-        accionButton.setText("Aceptar");
+        accionButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/comprobado.png"))); // NOI18N
+        accionButton.setContentAreaFilled(false);
         accionButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 accionButtonMouseClicked(evt);
@@ -546,7 +566,7 @@ public class CRUD extends javax.swing.JFrame {
                 accionButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(accionButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
+        jPanel4.add(accionButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, -1, -1));
 
         movementTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -572,7 +592,7 @@ public class CRUD extends javax.swing.JFrame {
         });
         jScrollPane18.setViewportView(movementTable);
 
-        jPanel4.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 380, 180));
+        jPanel4.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 380, 180));
         jPanel4.add(drMontoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 170, 20));
 
         accountsMovementTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -603,7 +623,7 @@ public class CRUD extends javax.swing.JFrame {
         jPanel4.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, -1, -1));
 
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel4.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 60, 420));
+        jPanel4.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 10, 420));
 
         ID.setText("Fecha:");
         jPanel4.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, 20));
@@ -638,6 +658,12 @@ public class CRUD extends javax.swing.JFrame {
         jLabel16.setText("Cuenta");
         jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
         jPanel4.add(drCuenta1Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 140, 20));
+
+        jLabel24.setText("Cuentas");
+        jPanel4.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 60, -1));
+
+        jLabel25.setText("Movimientos");
+        jPanel4.add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, -1));
 
         jTabbedPane1.addTab("Depósito/Retiro", jPanel4);
 
@@ -680,19 +706,32 @@ public class CRUD extends javax.swing.JFrame {
         recordsTable.setFillsViewportHeight(true);
         jScrollPane2.setViewportView(recordsTable);
 
+        jLabel20.setText("Cuentas");
+
+        jLabel21.setText("Estado de cuenta");
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 680, Short.MAX_VALUE)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel20)
+                    .addComponent(jLabel21))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(54, Short.MAX_VALUE)
+                .addContainerGap(29, Short.MAX_VALUE)
+                .addComponent(jLabel20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
+                .addGap(13, 13, 13)
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56))
         );
@@ -717,13 +756,14 @@ public class CRUD extends javax.swing.JFrame {
         jPanel5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, -1, -1));
         jPanel5.add(transferMontoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, 160, -1));
 
-        jButton14.setText("Aceptar");
+        jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/comprobado.png"))); // NOI18N
+        jButton14.setContentAreaFilled(false);
         jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton14MouseClicked(evt);
             }
         });
-        jPanel5.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, -1, -1));
+        jPanel5.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 340, -1, -1));
 
         toTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -739,7 +779,7 @@ public class CRUD extends javax.swing.JFrame {
         toTable.setFillsViewportHeight(true);
         jScrollPane12.setViewportView(toTable);
 
-        jPanel5.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 630, 95));
+        jPanel5.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 630, 95));
 
         fromTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -763,13 +803,13 @@ public class CRUD extends javax.swing.JFrame {
         jPanel5.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 630, 95));
 
         jLabel17.setText("Cliente");
-        jPanel5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 20));
-        jPanel5.add(transferClientIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 70, 20));
+        jPanel5.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, 20));
+        jPanel5.add(transferClientIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 70, 20));
 
         jLabel19.setText("Moneda");
-        jPanel5.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, 20));
-        jPanel5.add(tranferCurrencyLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 100, 20));
-        jPanel5.add(transferClientNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 150, 20));
+        jPanel5.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, 20));
+        jPanel5.add(tranferCurrencyLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 100, 20));
+        jPanel5.add(transferClientNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 150, 20));
         jPanel5.add(msgLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, 250, 20));
 
         jLabel18.setText("ID Transferencia");
@@ -780,7 +820,28 @@ public class CRUD extends javax.swing.JFrame {
         jPanel5.add(Detalle, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
         jPanel5.add(tranferDetalleTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, 140, -1));
 
+        jLabel22.setText("Cuenta a debitar");
+        jPanel5.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+
+        jLabel23.setText("Cuenta a creditar");
+        jPanel5.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+
         jTabbedPane1.addTab("Transferencias", jPanel5);
+
+        jPanel6.setBackground(new java.awt.Color(229, 240, 246));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 680, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 414, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Historial", jPanel6);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1045,11 +1106,20 @@ public class CRUD extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1063,6 +1133,7 @@ public class CRUD extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
