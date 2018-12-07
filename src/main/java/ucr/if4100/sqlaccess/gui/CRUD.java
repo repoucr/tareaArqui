@@ -110,7 +110,7 @@ public class CRUD extends javax.swing.JFrame {
                 recordsTable.setModel(new javax.swing.table.DefaultTableModel(arrayTableAccount, new String[]{"ID Cuenta", "No. Interno", "Moneda","Fecha","Detalle","Monto","Cliente"}));
             }
         } else {
-            String[][] arrayTableAccount = new String[recordsList.size()][4];
+            String[][] arrayTableAccount = new String[recordsList.size()][7];
             recordsTable.setModel(new javax.swing.table.DefaultTableModel(arrayTableAccount, new String[]{"ID Cuenta", "No. Interno", "Moneda","Fecha","Detalle","Monto","Cliente"}));
         }
     }
