@@ -27,6 +27,10 @@ public class AccountMovementBiz {
         _dataAccess.makeDeposit(id, amount, date, detail, idAccount, numberAccount, idClient, clientName, currency);
     }
     
+    public void makeWithdrawal(String id,int amount,String  date,String  detail,String  idAccount,String  numberAccount,String  idClient,String  clientName,String currency ){
+        _dataAccess.makeWithdrawal(id, amount, date, detail, idAccount, numberAccount, idClient, clientName, currency);
+    }
+    
 //    public void insertAccountMovement(String idMovement, String idAccount, String numberAccount){
 //        _dataAccess.insertAccountMovement(idMovement, idAccount, numberAccount);
 //               

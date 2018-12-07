@@ -107,7 +107,31 @@ public class AccountMovementData {
             Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+        public void makeWithdrawal(String id, int amount, String date, String detail, String idAccount,String numberAccount, String idClient, String clientName,String currency) {
+        Connection conn = null;
+        CallableStatement spCall = null;
 
+        try {
+            conn = DatabaseConnection.getDatabaseConnection();
+            spCall = conn.prepareCall("{CALL dbo.make_withdrawal(?,?,?,?,?,?,?,?,?)}");
+            spCall.setString("id", id);
+            spCall.setInt("amount",  amount);
+            spCall.setString("date", date);
+            spCall.setString("detail", detail);
+            spCall.setString("id_account",idAccount);
+            spCall.setString("number_account",numberAccount);
+            spCall.setString("id_client",idClient);
+            spCall.setString("client_name",clientName);
+            spCall.setString("currency",currency);
+            
+            boolean results = spCall.execute();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 //    public void insertAccountMovement(String idMovement, String idAccount, String numberAccount) {
 //        Connection conn = null;
 //        CallableStatement spCall = null;
