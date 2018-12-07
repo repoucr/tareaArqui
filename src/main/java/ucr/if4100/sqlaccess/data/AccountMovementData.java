@@ -83,13 +83,13 @@ public class AccountMovementData {
         return accountMovements;
     }
     
-    public void makeDeposit(String id, int amount, String date, String detail, String idAccount,String numberAccount, String idClient, String clientName) {
+    public void makeDeposit(String id, int amount, String date, String detail, String idAccount,String numberAccount, String idClient, String clientName,String currency) {
         Connection conn = null;
         CallableStatement spCall = null;
 
         try {
             conn = DatabaseConnection.getDatabaseConnection();
-            spCall = conn.prepareCall("{CALL dbo.make_deposit(?,?,?,?,?,?,?,?)}");
+            spCall = conn.prepareCall("{CALL dbo.make_deposit(?,?,?,?,?,?,?,?,?)}");
             spCall.setString("id", id);
             spCall.setInt("amount",  amount);
             spCall.setString("date", date);
@@ -98,6 +98,7 @@ public class AccountMovementData {
             spCall.setString("number_account",numberAccount);
             spCall.setString("id_client",idClient);
             spCall.setString("client_name",clientName);
+            spCall.setString("currency",currency);
             
             boolean results = spCall.execute();
         } catch (ClassNotFoundException ex) {

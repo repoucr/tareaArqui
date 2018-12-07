@@ -23,8 +23,8 @@ public class AccountMovementBiz {
         return _dataAccess.getAccountMovement();
     }
     
-    public void makeDesposit(String id,int amount,String  date,String  detail,String  idAccount,String  numberAccount,String  idClient,String  clientName){
-        _dataAccess.makeDeposit(id, amount, date, detail, idAccount, numberAccount, idClient, clientName);
+    public void makeDesposit(String id,int amount,String  date,String  detail,String  idAccount,String  numberAccount,String  idClient,String  clientName,String currency ){
+        _dataAccess.makeDeposit(id, amount, date, detail, idAccount, numberAccount, idClient, clientName, currency);
     }
     
 //    public void insertAccountMovement(String idMovement, String idAccount, String numberAccount){
