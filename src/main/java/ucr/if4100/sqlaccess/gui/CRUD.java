@@ -316,7 +316,7 @@ public class CRUD extends javax.swing.JFrame {
         jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel8.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 17, 389));
 
-        insertAccountButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\wilme\\Desktop\\IIIBases\\tareaArqui\\src\\main\\java\\images\\simbolo-mas-en-un-cuadrado-negro-redondeado.png")); // NOI18N
+        insertAccountButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/simbolo-mas-en-un-cuadrado-negro-redondeado.png"))); // NOI18N
         insertAccountButton.setContentAreaFilled(false);
         insertAccountButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -325,7 +325,7 @@ public class CRUD extends javax.swing.JFrame {
         });
         jPanel8.add(insertAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
 
-        jButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\wilme\\Desktop\\IIIBases\\tareaArqui\\src\\main\\java\\images\\borrar.png")); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/borrar.png"))); // NOI18N
         jButton7.setContentAreaFilled(false);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
