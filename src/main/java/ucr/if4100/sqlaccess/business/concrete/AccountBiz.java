@@ -7,6 +7,7 @@ package ucr.if4100.sqlaccess.business.concrete;
 
 import java.util.List;
 import ucr.if4100.sqlaccess.common.bean.account;
+import ucr.if4100.sqlaccess.common.bean.record;
 import ucr.if4100.sqlaccess.data.AccountData;
 
 /**
@@ -22,6 +23,10 @@ public class AccountBiz {
     }
     public  List<account> getClients() {
         return _dataAccess.getAccounts();
+    }
+    
+    public List<record> getRecordsByAccount(String idAccount){
+        return _dataAccess.getRecordsByAccount(idAccount);
     }
     
     public void insertAccount(String id, String number, int accountBalance, String currency){
