@@ -102,9 +102,9 @@ public class AccountMovementData {
             
             boolean results = spCall.execute();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -127,9 +127,9 @@ public class AccountMovementData {
             
             boolean results = spCall.execute();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 //    public void insertAccountMovement(String idMovement, String idAccount, String numberAccount) {

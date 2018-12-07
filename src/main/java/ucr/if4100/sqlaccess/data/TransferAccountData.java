@@ -109,7 +109,7 @@ public class TransferAccountData {
             spCall.setString("detail", detail);
             spCall.setString("id_account_to_debit", idAccountToDebit);
             spCall.setString("id_account_to_credit", idAccountToCredit);
-            spCall.setString("number_account_to_debitt", numberAccountToDebit);
+            spCall.setString("number_account_to_debit", numberAccountToDebit);
             spCall.setString("number_account_to_credit", numberAccountToCredit);
             spCall.setString("id_client", idClient);
             spCall.setString("client_name", clientName);
