@@ -29,6 +29,10 @@ public class AccountBiz {
         return _dataAccess.getRecordsByAccount(idAccount);
     }
     
+    public List<record> getRecords(){
+        return _dataAccess.getRecords();
+    }
+    
     public void insertAccount(String id, String number, int accountBalance, String currency){
         _dataAccess.insertAccount(id, number, accountBalance, currency);
     }
