@@ -859,6 +859,12 @@ public class CRUD extends javax.swing.JFrame {
     private void borrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarButtonActionPerformed
         hasBiz.deleteHasByIdClient(insertCedulaTextField.getText().toString());
         clientBiz.deleteClient(insertCedulaTextField.getText().toString());
+        List<has> hasList = hasBiz.getHas();
+        for (int i = 0; i < hasList.size(); i++) {
+            if (insertCedulaTextField.getText().toString().equalsIgnoreCase(hasList.get(i).getIdClient())) {
+                accountBiz.deleteAccountById(hasList.get(i).getIdAccount());
+            }
+        }
         fillClientsTable();
     }//GEN-LAST:event_borrarButtonActionPerformed
 
