@@ -317,22 +317,23 @@ public class CRUD extends javax.swing.JFrame {
         jPanel8.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 17, 389));
 
         insertAccountButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simbolo-mas-en-un-cuadrado-negro-redondeado.png"))); // NOI18N
+        insertAccountButton.setText("Agregar");
         insertAccountButton.setContentAreaFilled(false);
         insertAccountButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 insertAccountButtonActionPerformed(evt);
             }
         });
-        jPanel8.add(insertAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, -1));
+        jPanel8.add(insertAccountButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, -1, 30));
 
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/borrar.png"))); // NOI18N
+        jButton7.setText("Eliminar");
         jButton7.setContentAreaFilled(false);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
-        jPanel8.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, -1));
+        jPanel8.add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, -1, 30));
 
         accountTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -420,19 +421,18 @@ public class CRUD extends javax.swing.JFrame {
         jPanel2.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 0, -1, 449));
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 17, 398));
+        jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 17, 398));
 
         jButton4.setText("Borrar");
         jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(935, 350, -1, -1));
 
-        borrarButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\wilme\\Desktop\\IIIBases\\tareaArqui\\src\\main\\java\\images\\borrar.png")); // NOI18N
-        borrarButton.setContentAreaFilled(false);
+        borrarButton.setText("Borrar");
         borrarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 borrarButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(borrarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 320, -1, -1));
+        jPanel2.add(borrarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 340, -1, -1));
 
         clientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -498,16 +498,16 @@ public class CRUD extends javax.swing.JFrame {
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
         jPanel2.add(insertFechaTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 137, -1));
 
-        insertClientButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\wilme\\Desktop\\IIIBases\\tareaArqui\\src\\main\\java\\images\\simbolo-mas-en-un-cuadrado-negro-redondeado.png")); // NOI18N
+        insertClientButton.setText("Agregar");
         insertClientButton.setContentAreaFilled(false);
         insertClientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 insertClientButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(insertClientButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, -1, -1));
+        jPanel2.add(insertClientButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 80, 20));
 
-        updateClientButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\wilme\\Desktop\\IIIBases\\tareaArqui\\src\\main\\java\\images\\intercambio.png")); // NOI18N
+        updateClientButton.setText("Actualizar");
         updateClientButton.setContentAreaFilled(false);
         updateClientButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -535,8 +535,7 @@ public class CRUD extends javax.swing.JFrame {
         jPanel4.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, 20));
         jPanel4.add(montoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 90, -1));
 
-        accionButton.setIcon(new javax.swing.ImageIcon("C:\\Users\\wilme\\Desktop\\IIIBases\\tareaArqui\\src\\main\\java\\images\\comprobado.png")); // NOI18N
-        accionButton.setContentAreaFilled(false);
+        accionButton.setText("Aceptar");
         accionButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 accionButtonMouseClicked(evt);
@@ -547,7 +546,7 @@ public class CRUD extends javax.swing.JFrame {
                 accionButtonActionPerformed(evt);
             }
         });
-        jPanel4.add(accionButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, -1, -1));
+        jPanel4.add(accionButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
 
         movementTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -718,14 +717,13 @@ public class CRUD extends javax.swing.JFrame {
         jPanel5.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 350, -1, -1));
         jPanel5.add(transferMontoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 350, 160, -1));
 
-        jButton14.setIcon(new javax.swing.ImageIcon("C:\\Users\\wilme\\Desktop\\IIIBases\\tareaArqui\\src\\main\\java\\images\\comprobado.png")); // NOI18N
-        jButton14.setContentAreaFilled(false);
+        jButton14.setText("Aceptar");
         jButton14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton14MouseClicked(evt);
             }
         });
-        jPanel5.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 340, -1, -1));
+        jPanel5.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, -1, -1));
 
         toTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -794,7 +792,7 @@ public class CRUD extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );

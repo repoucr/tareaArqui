@@ -102,7 +102,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
                   <Component id="jTabbedPane1" min="-2" pref="442" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
@@ -254,6 +254,7 @@
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                               <Image iconType="3" name="/simbolo-mas-en-un-cuadrado-negro-redondeado.png"/>
                             </Property>
+                            <Property name="text" type="java.lang.String" value="Agregar"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                           </Properties>
                           <Events>
@@ -261,15 +262,13 @@
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="70" y="340" width="-1" height="-1"/>
+                              <AbsoluteConstraints x="70" y="340" width="-1" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
                         <Component class="javax.swing.JButton" name="jButton7">
                           <Properties>
-                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/borrar.png"/>
-                            </Property>
+                            <Property name="text" type="java.lang.String" value="Eliminar"/>
                             <Property name="contentAreaFilled" type="boolean" value="false"/>
                           </Properties>
                           <Events>
@@ -277,7 +276,7 @@
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="10" y="340" width="-1" height="-1"/>
+                              <AbsoluteConstraints x="10" y="340" width="-1" height="30"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -442,7 +441,7 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="200" y="10" width="17" height="398"/>
+                      <AbsoluteConstraints x="210" y="10" width="17" height="398"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -458,17 +457,14 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="borrarButton">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\wilme\Desktop\IIIBases\tareaArqui\src\main\java\images\borrar.png"/>
-                    </Property>
-                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="text" type="java.lang.String" value="Borrar"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="borrarButtonActionPerformed"/>
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="600" y="320" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="600" y="340" width="-1" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -628,9 +624,7 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="insertClientButton">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\wilme\Desktop\IIIBases\tareaArqui\src\main\java\images\simbolo-mas-en-un-cuadrado-negro-redondeado.png"/>
-                    </Property>
+                    <Property name="text" type="java.lang.String" value="Agregar"/>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -638,15 +632,13 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="10" y="320" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="10" y="320" width="80" height="20"/>
                     </Constraint>
                   </Constraints>
                 </Component>
                 <Component class="javax.swing.JButton" name="updateClientButton">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\wilme\Desktop\IIIBases\tareaArqui\src\main\java\images\intercambio.png"/>
-                    </Property>
+                    <Property name="text" type="java.lang.String" value="Actualizar"/>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
@@ -745,10 +737,7 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="accionButton">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\wilme\Desktop\IIIBases\tareaArqui\src\main\java\images\comprobado.png"/>
-                    </Property>
-                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="accionButtonMouseClicked"/>
@@ -756,7 +745,7 @@
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="160" y="160" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="160" y="170" width="-1" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
@@ -1256,17 +1245,14 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton14">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\wilme\Desktop\IIIBases\tareaArqui\src\main\java\images\comprobado.png"/>
-                    </Property>
-                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="text" type="java.lang.String" value="Aceptar"/>
                   </Properties>
                   <Events>
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton14MouseClicked"/>
                   </Events>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                      <AbsoluteConstraints x="580" y="340" width="-1" height="-1"/>
+                      <AbsoluteConstraints x="580" y="350" width="-1" height="-1"/>
                     </Constraint>
                   </Constraints>
                 </Component>
