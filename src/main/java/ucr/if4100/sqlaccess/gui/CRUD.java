@@ -518,16 +518,16 @@ public class CRUD extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel4.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, -1, 90));
 
-        jLabel26.setText("ID");
-        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 60, 20));
+        jLabel26.setText("ID:");
+        jPanel4.add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 40, 20));
         jPanel4.add(drFondosLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 100, 20));
 
         jLabel28.setText("Fondos");
         jPanel4.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
-        jPanel4.add(drIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 200, 20));
+        jPanel4.add(drIDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 200, 20));
 
-        jLabel30.setText("Monto");
-        jPanel4.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, 10));
+        jLabel30.setText("Monto:");
+        jPanel4.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, 20));
         jPanel4.add(montoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 90, -1));
 
         accionButton.setText("Aceptar");
@@ -568,7 +568,7 @@ public class CRUD extends javax.swing.JFrame {
         jScrollPane18.setViewportView(movementTable);
 
         jPanel4.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 380, 180));
-        jPanel4.add(drMontoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 170, 20));
+        jPanel4.add(drMontoLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 170, 20));
 
         accountsMovementTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -600,21 +600,21 @@ public class CRUD extends javax.swing.JFrame {
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
         jPanel4.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 60, 420));
 
-        ID.setText("Fecha");
-        jPanel4.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, -1));
+        ID.setText("Fecha:");
+        jPanel4.add(ID, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, -1, 20));
         jPanel4.add(drFechaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 160, 20));
 
-        jLabel8.setText("Detalle");
-        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, -1));
+        jLabel8.setText("Detalle:");
+        jPanel4.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, -1, 20));
         jPanel4.add(drDetalleLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 160, 20));
 
-        jLabel10.setText("Cuenta");
-        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+        jLabel10.setText("Cuenta:");
+        jPanel4.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, 20));
         jPanel4.add(drCuentaLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, 150, 20));
 
-        jLabel7.setText("Cliente");
-        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, -1));
-        jPanel4.add(drClienteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 160, 20));
+        jLabel7.setText("Cliente:");
+        jPanel4.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, -1, 20));
+        jPanel4.add(drClienteLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 160, 20));
 
         accionComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Depósito", "Retiro" }));
         jPanel4.add(accionComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 90, -1));
@@ -812,12 +812,13 @@ public class CRUD extends javax.swing.JFrame {
     }//GEN-LAST:event_accountsMovementTableMouseClicked
 
     private void movementTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_movementTableMouseClicked
+        has hasClient = getHasClientByID(movementTable.getValueAt(movementTable.getSelectedRow(), 0).toString());
         drIDLabel.setText(movementTable.getValueAt(movementTable.getSelectedRow(), 0).toString());
         drMontoLabel.setText(movementTable.getValueAt(movementTable.getSelectedRow(), 1).toString());
         drFechaLabel.setText(movementTable.getValueAt(movementTable.getSelectedRow(), 2).toString());
         drDetalleLabel.setText(movementTable.getValueAt(movementTable.getSelectedRow(), 3).toString());
         drCuentaLabel.setText(movementTable.getValueAt(movementTable.getSelectedRow(), 4).toString());
-        drClienteLabel.setText(movementTable.getValueAt(movementTable.getSelectedRow(), 5).toString());
+        drClienteLabel.setText(hasClient.getNameClient());
     }//GEN-LAST:event_movementTableMouseClicked
 
     private void accionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_accionButtonActionPerformed
@@ -902,7 +903,7 @@ public class CRUD extends javax.swing.JFrame {
             has hasClient = getHasClientByID(accountsMovementTable.getValueAt(accountsMovementTable.getSelectedRow(), 0).toString());
             accountMovementBiz.makeDesposit(transaccionTextField.getText().toString(),
                     Integer.parseInt(montoTextField.getText().toString()), now.toString(),
-                    "Depósito " + detalleTextField.getText().toString(),
+                    "Depósito: " + detalleTextField.getText().toString(),
                     accountsMovementTable.getValueAt(accountsMovementTable.getSelectedRow(), 0).toString(),
                     accountsMovementTable.getValueAt(accountsMovementTable.getSelectedRow(), 1).toString(),
                     hasClient.getIdClient().toString(),
@@ -914,7 +915,7 @@ public class CRUD extends javax.swing.JFrame {
             has hasClient = getHasClientByID(accountsMovementTable.getValueAt(accountsMovementTable.getSelectedRow(), 0).toString());
             accountMovementBiz.makeWithdrawal(transaccionTextField.getText().toString(),
                     Integer.parseInt(montoTextField.getText().toString()), now.toString(),
-                    "Retiro " + detalleTextField.getText().toString(),
+                    "Retiro: " + detalleTextField.getText().toString(),
                     accountsMovementTable.getValueAt(accountsMovementTable.getSelectedRow(), 0).toString(),
                     accountsMovementTable.getValueAt(accountsMovementTable.getSelectedRow(), 1).toString(),
                     hasClient.getIdClient().toString(),
@@ -934,22 +935,22 @@ public class CRUD extends javax.swing.JFrame {
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
         if (Integer.parseInt(fromTable.getValueAt(fromTable.getSelectedRow(), 2).toString()) > 0 && fromTable.getValueAt(fromTable.getSelectedRow(), 3).toString().equalsIgnoreCase(toTable.getValueAt(toTable.getSelectedRow(), 3).toString())) {
-            transferAccountBiz.makeTransfer(idTransfertextField.getText().toString()
-                    , transferMontoTextField.getText().toString()
-                    , now.toString()
-                    , tranferDetalleTextField.getText().toString()
-                    , fromTable.getValueAt(fromTable.getSelectedRow(), 0).toString()
-                    , toTable.getValueAt(toTable.getSelectedRow(), 0).toString()
-                    , fromTable.getValueAt(fromTable.getSelectedRow(), 1).toString()
-                    , toTable.getValueAt(toTable.getSelectedRow(), 1).toString()
-                    , transferClientIDLabel.getText().toString()
-                    , transferClientNameLabel.getText().toString()
-                    , tranferCurrencyLabel.getText());
+            transferAccountBiz.makeTransfer(idTransfertextField.getText().toString(),
+                     transferMontoTextField.getText().toString(),
+                     now.toString(),
+                     tranferDetalleTextField.getText().toString(),
+                     fromTable.getValueAt(fromTable.getSelectedRow(), 0).toString(),
+                     toTable.getValueAt(toTable.getSelectedRow(), 0).toString(),
+                     fromTable.getValueAt(fromTable.getSelectedRow(), 1).toString(),
+                     toTable.getValueAt(toTable.getSelectedRow(), 1).toString(),
+                     transferClientIDLabel.getText().toString(),
+                     transferClientNameLabel.getText().toString(),
+                     tranferCurrencyLabel.getText());
             msgLabel.setText("Tranferencia realizada.");
             fillAccountTable();
         } else {
             msgLabel.setText("Tipo de moneda diferente.");
-        } 
+        }
     }//GEN-LAST:event_jButton14MouseClicked
 
     /**
