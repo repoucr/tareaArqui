@@ -87,44 +87,44 @@ public class MovementData {
         return movements;
     }
 
-    public void insertMovement(String id, int amount, String date, String detail, String idAccount, String idClient, String clientName) {
-        Connection conn = null;
-        CallableStatement spCall = null;
+//    public void insertMovement(String id, int amount, String date, String detail, String idAccount, String idClient, String clientName) {
+//        Connection conn = null;
+//        CallableStatement spCall = null;
+//
+//        try {
+//            conn = DatabaseConnection.getDatabaseConnection();
+//            spCall = conn.prepareCall("{CALL dbo.insert_movement(?,?,?,?,?,?,?)}");
+//            spCall.setString("id", id);
+//            spCall.setInt("amount",  amount);
+//            spCall.setString("date", date);
+//            spCall.setString("detail", detail);
+//            spCall.setString("id_account",idAccount);
+//            spCall.setString("id_client",idClient);
+//            spCall.setString("client_name",clientName);
+//            
+//            boolean results = spCall.execute();
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
 
-        try {
-            conn = DatabaseConnection.getDatabaseConnection();
-            spCall = conn.prepareCall("{CALL dbo.insert_movement(?,?,?,?,?,?,?)}");
-            spCall.setString("id", id);
-            spCall.setInt("amount",  amount);
-            spCall.setString("date", date);
-            spCall.setString("detail", detail);
-            spCall.setString("id_account",idAccount);
-            spCall.setString("id_client",idClient);
-            spCall.setString("client_name",clientName);
-            
-            boolean results = spCall.execute();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    public void deleteMovement(String id) {
-        Connection conn = null;
-        CallableStatement spCall = null;
-
-        try {
-            conn = DatabaseConnection.getDatabaseConnection();
-            spCall = conn.prepareCall("{CALL dbo.delete_movement(?)}");
-            spCall.setString("id", id);
-
-            boolean results = spCall.execute();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+//    public void deleteMovement(String id) {
+//        Connection conn = null;
+//        CallableStatement spCall = null;
+//
+//        try {
+//            conn = DatabaseConnection.getDatabaseConnection();
+//            spCall = conn.prepareCall("{CALL dbo.delete_movement(?)}");
+//            spCall.setString("id", id);
+//
+//            boolean results = spCall.execute();
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
  
 }

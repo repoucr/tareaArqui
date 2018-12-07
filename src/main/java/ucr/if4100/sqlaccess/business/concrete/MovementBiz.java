@@ -25,13 +25,13 @@ public class MovementBiz {
         return _dataAccess.getMovements();
     }
     
-    public void insertMovement(String id, int amount, String date, String detail,String idAccount,String idClient,String clientName){
-        _dataAccess.insertMovement(id, amount, date, detail, idAccount, idClient, clientName);
-    }
-    
-    public void deleteMovement(String id){
-        _dataAccess.deleteMovement(id);
-    }
+//    public void insertMovement(String id, int amount, String date, String detail,String idAccount,String idClient,String clientName){
+//        _dataAccess.insertMovement(id, amount, date, detail, idAccount, idClient, clientName);
+//    }
+//    
+//    public void deleteMovement(String id){
+//        _dataAccess.deleteMovement(id);
+//    }
     
  
 }

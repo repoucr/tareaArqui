@@ -82,74 +82,98 @@ public class AccountMovementData {
 
         return accountMovements;
     }
-
-    public void insertAccountMovement(String idMovement, String idAccount, String numberAccount) {
+    
+    public void makeDeposit(String id, int amount, String date, String detail, String idAccount,String numberAccount, String idClient, String clientName) {
         Connection conn = null;
         CallableStatement spCall = null;
 
         try {
             conn = DatabaseConnection.getDatabaseConnection();
-            spCall = conn.prepareCall("{CALL dbo.insert_account_movement(?,?,?)}");
-            spCall.setString("id_movement", idMovement);
-            spCall.setString("id_account", idAccount);
-            spCall.setString("number_account", numberAccount);
+            spCall = conn.prepareCall("{CALL dbo.make_deposit(?,?,?,?,?,?,?,?)}");
+            spCall.setString("id", id);
+            spCall.setInt("amount",  amount);
+            spCall.setString("date", date);
+            spCall.setString("detail", detail);
+            spCall.setString("id_account",idAccount);
+            spCall.setString("number_account",numberAccount);
+            spCall.setString("id_client",idClient);
+            spCall.setString("client_name",clientName);
             
             boolean results = spCall.execute();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MovementData.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public void deleteAccountMovementByIdMovement(String id) {
-        Connection conn = null;
-        CallableStatement spCall = null;
-
-        try {
-            conn = DatabaseConnection.getDatabaseConnection();
-            spCall = conn.prepareCall("{CALL dbo.delete_account_movement_by_id_movement(?)}");
-            spCall.setString("id_movement", id);
-
-            boolean results = spCall.execute();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    public void deleteAccountMovementByIdAccount(String id) {
-        Connection conn = null;
-        CallableStatement spCall = null;
-
-        try {
-            conn = DatabaseConnection.getDatabaseConnection();
-            spCall = conn.prepareCall("{CALL dbo.delete_account_movement_by_id_account(?)}");
-            spCall.setString("id_account", id);
-
-            boolean results = spCall.execute();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    public void deleteAccountMovementByNumberAccount(String number) {
-        Connection conn = null;
-        CallableStatement spCall = null;
-
-        try {
-            conn = DatabaseConnection.getDatabaseConnection();
-            spCall = conn.prepareCall("{CALL dbo.delete_account_movement_by_number_account(?)}");
-            spCall.setString("number_account", number);
-
-            boolean results = spCall.execute();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+//    public void insertAccountMovement(String idMovement, String idAccount, String numberAccount) {
+//        Connection conn = null;
+//        CallableStatement spCall = null;
+//
+//        try {
+//            conn = DatabaseConnection.getDatabaseConnection();
+//            spCall = conn.prepareCall("{CALL dbo.insert_account_movement(?,?,?)}");
+//            spCall.setString("id_movement", idMovement);
+//            spCall.setString("id_account", idAccount);
+//            spCall.setString("number_account", numberAccount);
+//            
+//            boolean results = spCall.execute();
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
+//
+//    public void deleteAccountMovementByIdMovement(String id) {
+//        Connection conn = null;
+//        CallableStatement spCall = null;
+//
+//        try {
+//            conn = DatabaseConnection.getDatabaseConnection();
+//            spCall = conn.prepareCall("{CALL dbo.delete_account_movement_by_id_movement(?)}");
+//            spCall.setString("id_movement", id);
+//
+//            boolean results = spCall.execute();
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
+//
+//    public void deleteAccountMovementByIdAccount(String id) {
+//        Connection conn = null;
+//        CallableStatement spCall = null;
+//
+//        try {
+//            conn = DatabaseConnection.getDatabaseConnection();
+//            spCall = conn.prepareCall("{CALL dbo.delete_account_movement_by_id_account(?)}");
+//            spCall.setString("id_account", id);
+//
+//            boolean results = spCall.execute();
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
+//    
+//    public void deleteAccountMovementByNumberAccount(String number) {
+//        Connection conn = null;
+//        CallableStatement spCall = null;
+//
+//        try {
+//            conn = DatabaseConnection.getDatabaseConnection();
+//            spCall = conn.prepareCall("{CALL dbo.delete_account_movement_by_number_account(?)}");
+//            spCall.setString("number_account", number);
+//
+//            boolean results = spCall.execute();
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(AccountMovementData.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
 }

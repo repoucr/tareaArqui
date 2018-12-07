@@ -23,19 +23,23 @@ public class AccountMovementBiz {
         return _dataAccess.getAccountMovement();
     }
     
-    public void insertAccountMovement(String idMovement, String idAccount, String numberAccount){
-        _dataAccess.insertAccountMovement(idMovement, idAccount, numberAccount);
-               
+    public void makeDesposit(String id,int amount,String  date,String  detail,String  idAccount,String  numberAccount,String  idClient,String  clientName){
+        _dataAccess.makeDeposit(id, amount, date, detail, idAccount, numberAccount, idClient, clientName);
     }
     
-    public void deleteAccountMovementByIdMovement(String id){
-        _dataAccess.deleteAccountMovementByIdMovement(id);
-    }
-    public void deleteAccountMovementByIdAccount(String id){
-        _dataAccess.deleteAccountMovementByIdAccount(id);
-    }
-    
-    public void deleteAccountMovementByNumberAccount(String number){
-         _dataAccess.deleteAccountMovementByNumberAccount(number);
-    }
+//    public void insertAccountMovement(String idMovement, String idAccount, String numberAccount){
+//        _dataAccess.insertAccountMovement(idMovement, idAccount, numberAccount);
+//               
+//    }
+//    
+//    public void deleteAccountMovementByIdMovement(String id){
+//        _dataAccess.deleteAccountMovementByIdMovement(id);
+//    }
+//    public void deleteAccountMovementByIdAccount(String id){
+//        _dataAccess.deleteAccountMovementByIdAccount(id);
+//    }
+//    
+//    public void deleteAccountMovementByNumberAccount(String number){
+//         _dataAccess.deleteAccountMovementByNumberAccount(number);
+//    }
 }
